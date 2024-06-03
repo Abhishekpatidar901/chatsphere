@@ -2,14 +2,14 @@ import { currentProfile } from "@/lib/current-profile";
 import { db } from "@/lib/db";
 import { ChannelType, MemberRole } from "@prisma/client";
 import { redirect } from "next/navigation";
-// import { ServerHeader } from "./server-header";
+import { ServerHeader } from "./server-header";
 import { ScrollArea } from "@/components/ui/scroll-area";
-// import { SearchServer } from "./server-search";
+import { SearchServer } from "./server-search";
 import { Hash, Mic, ShieldAlert, ShieldCheck, Video } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
-// import { ServerSection } from "./server-section";
-// import { ServerChannel } from "./channel";
-// import { ServerMember } from "./members";
+import { ServerSection } from "./server-section";
+import { ServerChannel } from "./channel";
+import { ServerMember } from "./members";
 
 interface ChannelSidebarProps {
   serverId: string;
