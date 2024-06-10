@@ -1,12 +1,11 @@
-
 "use client";
 
 import qs from "query-string";
-import axios from "axios";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { ChannelType } from "@prisma/client";
+import axios from "axios";
+import { useRouter } from "next/navigation";
 
 import {
   Dialog,
@@ -23,10 +22,6 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { useRouter } from "next/navigation";
-import { useModal } from "@/hooks/use-modal-store";
 import {
   Select,
   SelectContent,
@@ -34,6 +29,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { useModal } from "@/hooks/use-modal-store";
+import { ChannelType } from "@prisma/client";
 import { useEffect } from "react";
 
 const formSchema = z.object({
@@ -65,13 +64,13 @@ export const EditChannelModal = () => {
 
   useEffect(() => {
     if (channel) {
-      form.setValue("name", channel.name);
-      form.setValue("type", channel.type);
+      form.setValue("name", channel?.name);
+      form.setValue("type", channel?.type);
     }
   }, [form, channel]);
 
   const isLoading = form.formState.isSubmitting;
-
+  console.log(channel?.id);
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
       const url = qs.stringifyUrl({
@@ -80,13 +79,18 @@ export const EditChannelModal = () => {
           serverId: server?.id,
         },
       });
-      await axios.patch(url, values);
-
+      console.log('Request URL:', url); // Log the complete URL to verify
+      console.log('Data being sent:', values); // Log the data to see what is being sent
+  
+      const response = await axios.patch(url, values);
+      console.log('Response:', response); // Log the response to inspect it
+  
       form.reset();
       router.refresh();
       onClose();
     } catch (error) {
-      console.log(error);
+      console.error('Error in patch request:', error);
+     // console.error('Error details:', error.response?.data); // Log detailed error message if available
     }
   };
 
@@ -154,7 +158,6 @@ export const EditChannelModal = () => {
                         ))}
                       </SelectContent>
                     </Select>
-                    <FormMessage />
                   </FormItem>
                 )}
               />
@@ -170,3 +173,5 @@ export const EditChannelModal = () => {
     </Dialog>
   );
 };
+
+export default EditChannelModal;
