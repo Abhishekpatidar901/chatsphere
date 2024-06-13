@@ -114,7 +114,6 @@ export async function PATCH(
           },
         },
       });
-  
       return NextResponse.json(server);
     } catch (error) {
       console.log("[CHANNEL_ID_PATCH]", error);
