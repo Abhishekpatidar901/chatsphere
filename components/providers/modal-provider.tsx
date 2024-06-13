@@ -9,9 +9,9 @@ import { ServerModal } from "../modals/create-server";
  import { LeaveServer } from "@/components/modals/leave-server";
  import { DeleteServer } from "@/components/modals/delete-server";
  import { DeleteChannel } from "@/components/modals/delete-channel";
- import { EditChannelModal } from "../modals/edit-channel";
-// import { MessageFileModal } from "@/components/modals/message-file";
-// import { DeleteMessage } from "../modals/delete-message";
+ import { EditChannelModal } from "@/components/modals/edit-channel";
+import { MessageFileModal } from "@/components/modals/message-file";
+ import { DeleteMessage } from "@/components/modals/delete-message";
 
 export const ModalProvider = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -35,14 +35,15 @@ export const ModalProvider = () => {
       <DeleteServer />
       <DeleteChannel />
       <EditChannelModal />
-      {/*
+      <MessageFileModal />
+      
 
      
 
 
 
-      <MessageFileModal />
-      <DeleteMessage /> */}
+    
+      <DeleteMessage />
     </>
   );
 };
