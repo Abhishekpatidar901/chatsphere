@@ -1,3 +1,4 @@
+![image](https://github.com/Abhishekpatidar901/chatsphere/assets/46681150/89549a00-9093-4147-a69f-1ec8c75e4f19)
 
 
 # Chatsphere - Multifunctional Digital Community Communication Platform
@@ -47,4 +48,4 @@ Chatsphere is a full-stack Discord clone built with the latest technologies to p
   - Neon DB Postgres
   - SocketIO
   - Clerk (authentication)
-![image](https://github.com/Abhishekpatidar901/chatsphere/assets/46681150/89549a00-9093-4147-a69f-1ec8c75e4f19)
+
