@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Chatsphere - Multifunctional Digital Community Communication Platform
 
-## Getting Started
+Chatsphere is a real-time communication platform developed using Next.js, providing server-based organization. It integrates text messaging with Socket.io, audio and video calls with Livekit, and attachments with UploadThing. The platform features a fully responsive user interface designed with TailwindCSS and ShadcnUI, utilizing Prisma ORM with MySQL for efficient data operations and Clerk for secure authentication. The app is deployed on Railway.app with GitHub, using Neon DB Postgres for persistent WebSocket support.
 
-First, run the development server:
+## Introduction
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Chatsphere is a full-stack Discord clone built with the latest technologies to provide a robust and scalable communication platform. It supports real-time messaging, audio and video calls, and various community management features. The application is designed to be highly responsive, ensuring a seamless user experience across all devices.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Key Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Real-time Messaging**: Integrated with Socket.io for real-time text messaging.
+- **Audio and Video Calls**: Supports 1:1 and group audio and video calls using Livekit.
+- **Attachments**: Users can send attachments as messages using UploadThing.
+- **Message Management**: Allows users to delete and edit messages in real time.
+- **Channels**: Create text, audio, and video call channels.
+- **1:1 Conversations and Calls**: Supports direct messaging and video calls between members.
+- **Member Management**: Manage members with roles (Guest / Moderator) and kick functionality.
+- **Invite System**: Generate unique invite links and manage invites.
+- **Infinite Loading**: Implements infinite loading for messages in batches of 10 using tanstack/query.
+- **Server Creation and Customization**: Users can create and customize their servers.
+- **Responsive UI**: Fully responsive user interface with light and dark modes.
+- **WebSocket Fallback**: Fallback to polling with alerts if WebSocket connection fails.
+- **ORM**: Utilizes Prisma for efficient data operations.
+- **Database**: MySQL database managed with Planetscale.
+- **Authentication**: Secure authentication using Clerk.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Technologies Used
 
-## Learn More
+- **Frontend**:
+  - Next.js 13
+  - React.js
+  - TailwindCSS
+  - ShadcnUI
+  - Socket.io
+  - React-hook-form
+  - UploadThing
+  - tanstack/query
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **Backend**:
+  - Node.js
+  - Express
+  - Livekit
+  - Prisma ORM
+  - MySQL (Planetscale)
+  - Neon DB Postgres
+  - SocketIO
+  - Clerk (authentication)
