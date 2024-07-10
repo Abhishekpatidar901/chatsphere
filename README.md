@@ -1,3 +1,5 @@
+
+
 # Chatsphere - Multifunctional Digital Community Communication Platform
 
 Chatsphere is a real-time communication platform developed using Next.js, providing server-based organization. It integrates text messaging with Socket.io, audio and video calls with Livekit, and attachments with UploadThing. The platform features a fully responsive user interface designed with TailwindCSS and ShadcnUI, utilizing Prisma ORM with MySQL for efficient data operations and Clerk for secure authentication. The app is deployed on Railway.app with GitHub, using Neon DB Postgres for persistent WebSocket support.
@@ -45,3 +47,4 @@ Chatsphere is a full-stack Discord clone built with the latest technologies to p
   - Neon DB Postgres
   - SocketIO
   - Clerk (authentication)
+![image](https://github.com/Abhishekpatidar901/chatsphere/assets/46681150/89549a00-9093-4147-a69f-1ec8c75e4f19)
